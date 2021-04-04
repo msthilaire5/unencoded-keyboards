@@ -55,12 +55,22 @@
 				var ctx = c.getContext("2d");
 				ctx.clearRect(0,0, c.width, c.height);
 			}
+
+			function saveChar() {
+				var c = document.getElementById("test-canvas");
+				var charImgData = c.toDataURL("image/png");
+				var downloadElem = document.createElement('a');
+				downloadElem.href = charImgData;
+				downloadElem.download = 'newchar.png';
+				downloadElem.click();
+			}
 		</script>
 	</canvas>
 </div>
 
 <div>
 	<button type="button" value="clear" onclick="clearCanvas()">clear</button>
+	<button type="button" value="save" onclick="saveChar()">save</button>
 </div>
 
 
