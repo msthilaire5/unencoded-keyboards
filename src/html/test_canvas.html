@@ -9,11 +9,45 @@
 
 <canvas id="test-canvas" width="600" height="600" style="border: 1px; background-color: white;">
 	<script type="text/javascript">
-		var c = document.getElementById("test-canvas");
-		var ctx = c.getContext("2d");
-		ctx.moveTo(0,0);
-		ctx.lineTo(600,600);
-		ctx.stroke();
+
+		let isDrawing = false;
+		let strokeThickness = 10;
+		window.onload = canvasSetUp;
+
+		function canvasSetUp() {
+			var c = document.getElementById("test-canvas");
+			var ctx = c.getContext("2d");
+			ctx.fillStyle = "black";
+
+			c.addEventListener('mousedown', function () {
+				beginDraw(event, ctx);
+			});
+			c.addEventListener('mouseup', stopDraw);
+			c.addEventListener('mousemove', function () {
+				createStroke(event, ctx);
+			});
+		}
+		
+		function beginDraw(event, context) {
+			isDrawing = true;
+			createStroke(event, context);
+		}
+
+		function stopDraw() {
+			isDrawing = false;
+		}
+
+		function createStroke(event, context) {
+			if (isDrawing) {
+				var x = event.clientX;
+				var y = event.clientY;
+
+				context.beginPath();
+				context.arc(x, y, strokeThickness, 0, 2 * Math.PI);
+				context.stroke();
+				context.fill();
+			}			
+		}
 	</script>
 </canvas>
 
