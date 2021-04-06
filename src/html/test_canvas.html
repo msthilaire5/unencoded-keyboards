@@ -3,11 +3,13 @@
 
 <head>
 	<title>Canvas Testing</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body style="background-color: lightcyan;">
 
 <div>
+	<h1>DRAWING CANVAS</h1>
 	<canvas id="test-canvas" width="600" height="600" style="border: 1px; background-color: white;">
 		<script type="text/javascript">
 
@@ -40,8 +42,8 @@
 
 			function createStroke(event, context) {
 				if (isDrawing) {
-					var x = event.clientX;
-					var y = event.clientY;
+					var x = event.offsetX;
+					var y = event.offsetY;
 
 					context.beginPath();
 					context.arc(x, y, strokeThickness, 0, 2 * Math.PI);
@@ -64,6 +66,17 @@
 				downloadElem.download = 'newchar.png';
 				downloadElem.click();
 			}
+
+			function saveToServer() {
+				var c = document.getElementById("test-canvas");
+				var charImgURL = c.toDataURL("image/png");
+				var img_b64 = charImgURL.substring(charImgURL.search(",") + 1);
+
+				$.get("upload/" + img_b64, function () {
+					var imgSendMsg = document.getElementById("img-send-msg");
+					imgSendMsg.innerHTML = "Sucessfully added new character!";
+				});
+			}
 		</script>
 	</canvas>
 </div>
@@ -71,6 +84,8 @@
 <div>
 	<button type="button" value="clear" onclick="clearCanvas()">clear</button>
 	<button type="button" value="save" onclick="saveChar()">save</button>
+	<button type="button" value="saveToServer" onclick="saveToServer()">send to server</button>
+	<p id="img-send-msg" style="display: inline;">On stand-by to send image!</p>
 </div>
 
 
