@@ -1,10 +1,11 @@
 <head>
     <script>
         function load() {
+            i = 0;
             var array = new Array();
 
             while (array.length < 10) {
-                var temp = Math.round(Math.random() * 9);
+                var temp = i++;
                 // if (!contains(array, temp)) {
                      array.push(temp);
                 // }
@@ -13,7 +14,7 @@
                 var btn = document.getElementById("btn" + i);
                 btn.value = array[i];
             }
-        }
+        } 
 
         function input(e) {
             var tbInput = document.getElementById("tbInput");
@@ -50,9 +51,9 @@
     <canvas id="myCanvas"> </canvas>
 
     <div id="VirtualKey">
-        <input id="btn1" type="button" onclick="input(this);" />
-        <input id="btn2" type="button" onclick="input(this);" />
-        <input id="btn3" type="button" onclick="input(this);" />
+        <input id="btn1" type="image" src="test_1.jpg" width="40" height ="40" onclick="input(this);" />
+        <input id="btn2" type="image" src="test_2.png" width="40" height ="40" onclick="input(this);" />
+        <input id="btn3" type="button" style="background-color: blue" onclick="input(this);" />
         <br />
         <input id="btn4" type="button" onclick="input(this);" />
         <input id="btn5" type="button" onclick="input(this);" />
@@ -65,10 +66,6 @@
         <input id="btn0" type="button" onclick="input(this)" />
         <input id="btnDel" type="button" value="Backspace" onclick="del();" />
     </div>
-
-    <input type="image" src="./img/cuz.jpg" alt="Submit" width="48" height="48">
-    
     <?php include 'imagegallery.php';?>
 
 </body>
-
