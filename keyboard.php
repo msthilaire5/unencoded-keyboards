@@ -36,9 +36,9 @@
                 y = y + 40;
                 x = 0;
             }  
-            // else if ( y > canvas.height -80 ){
-            //     longer(canvas, context); 
-            // }
+             else if ( y > canvas.height -80 ){
+                 longer(canvas, context); 
+             }
             else {
                 x = x + 40;
             }
@@ -57,9 +57,9 @@
                 y = y + 40;
                 x = 0;
             }  
-            // else if ( y > canvas.height -80 ){
-            //     longer(canvas, context); 
-            // }
+            else if ( y > canvas.height -80 ){
+                 longer(canvas, context); 
+            }
             else {
                 x = x + 40;
             }
@@ -113,24 +113,10 @@
     <canvas id="viewport" style="border:1px solid #000000;"> </canvas>
 
     <div id="VirtualKey">
-        <input id="btn1" type="image" src="./img/bustside.jpg" width="40" height ="40" onclick="input(this);" />
-        <input id="btn2" type="image" src="./img/cuz.jpg" width="40" height ="40" onclick="input(this);" />
-        <input id="btn3" type="button" style="background-color: blue" onclick="input(this);" />
-        <br />
-        <input id="btn4" type="button" onclick="input(this);" />
-        <input id="btn5" type="button" onclick="input(this);" />
-        <input id="btn6" type="button" onclick="input(this);" />
-        <br />
-        <input id="btn7" type="button" onclick="input(this);" />
-        <input id="btn8" type="button" onclick="input(this);" />
-        <input id="btn9" type="button" onclick="input(this);" />
-        <br />
-        <input id="btn0" type="button" onclick="input(this)" />
-        <br />
+        <?php include 'imagegallery.php';?>
         <input id="btnDel" type="button" value="Space" onclick="space();" />
         <input id="btnDwld" type="button" value="Save" onclick="downloadCanvas();" />
         <input id="btnDwld" type="button" value="Backspace" onclick="del();" />
     </div>
-    <?php include 'imagegallery.php';?>
 
 </body>
