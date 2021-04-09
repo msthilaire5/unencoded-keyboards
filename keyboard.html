@@ -20,22 +20,24 @@
 
         x= -40;
         y= 0;
-        xold = 0;
-        yold = 0;
-
+        
         function input(e) {
             var canvas = document.getElementById('viewport');
             var context = canvas.getContext('2d');
             var img = new Image();
             img.src = e.src;
             
-            xold = x;
-            yold = y;
             
             if (x > (canvas.width - 80)){
                 y = y + 40;
                 x = 0;
-            }  
+            } 
+            // else if (x<0){
+            //     x=0
+            // }
+            // else if (y<0){
+            //     y=0
+            // }
             // else if ( y > canvas.height -80 ){
             //     longer(canvas, context); 
             // }
@@ -50,9 +52,7 @@
         
         function space() {
             var canvas = document.getElementById('viewport');
-            xold = x;
-            yold = y;
-
+            
             if (x > (canvas.width - 80)){
                 y = y + 40;
                 x = 0;
@@ -79,12 +79,33 @@
         function del() {
             var canvas = document.getElementById('viewport');
             var context = canvas.getContext('2d');
+            
             context.beginPath();
             context.rect(x=x, y=y, 40, 40);
             context.fillStyle = "white"
             context.fill();
-            x = xold;
-            y = yold;
+
+            if(y == 0 && x == 0){
+                y=0
+                x=0
+            }
+            else if (x <= 0){
+                y = y - 40;
+                x = Math.trunc((canvas.width / 40)) * 40 - 40;
+                console.log(x)
+            }  
+            // else if ( y > canvas.height -80 ){
+            //     longer(canvas, context); 
+            // }
+            else {
+                x = x - 40;
+            }
+            
+            
+
+            
+
+            
         }
 
         //dosen't work without webserverS
@@ -131,6 +152,7 @@
         <input id="btnDwld" type="button" value="Save" onclick="downloadCanvas();" />
         <input id="btnDwld" type="button" value="Backspace" onclick="del();" />
     </div>
+    
     <?php include 'imagegallery.php';?>
 
 </body>
