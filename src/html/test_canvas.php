@@ -2,20 +2,23 @@
 <html>
 
 <head>
-	<title>Canvas Testing</title>
+	<title>Create a character</title>
 	<link href='main.css' rel='stylesheet'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Karla|Source+Code+Pro|Nunito+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body style="background-color: white;">
+      <h1><a href="./index.php" style="color: black; text-decoration: none;">Script Key</a></h1>
+      <center>
       <div class="topnav">
-        <li><a class='active' href="./index.php">Home</a></li>
+        <li><a class='active' href="./index.php">Write a Message</a></li>
+        <li><a href="./test_canvas.php">Create a Character</a></li>
         <li><a href="./aboutus.html">About Us</a></li>
-        <li><a href="./test_canvas.php">Create a character</a></li>
       </div>
+      </center>
       	<br>
-	<h1>DRAWING CANVAS</h1>
-	<canvas id="test-canvas" width="600" height="600" style="border: 5px solid; background-color: white; border-color:black">
+	<canvas id="test-canvas" width="600" height="600" style="border: 2px solid; background-color: white; border-color:black; margin-top: 30px;">
 		<script type="text/javascript">
 
 			let isDrawing = false;

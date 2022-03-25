@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Home</title>
     <link href='main.css' rel='stylesheet'>
 	  <script src='js/app.js' type="text/javascript"></script>
      <script>
@@ -22,7 +23,7 @@
             
         } 
 
-        x= -40;
+        x= -55;
         y= 0;
         
         function input(e) {
@@ -32,8 +33,8 @@
             img.src = e.src;
             
             
-            if (x > (canvas.width - 80)){
-                y = y + 40;
+            if (x > (canvas.width - 110)){
+                y = y + 55;
                 x = 0;
             } 
              else if (x<0){
@@ -42,11 +43,11 @@
              else if (y<0){
                  y=0
              }
-             else if ( y > canvas.height -80 ){
+             else if ( y > canvas.height -110 ){
                  longer(canvas, context); 
              }
             else {
-                x = x + 40;
+                x = x + 55;
             }
 
             context.drawImage(img, x=x, y=y, width=55, height=55);
@@ -57,15 +58,15 @@
         function space() {
             var canvas = document.getElementById('viewport');
             
-            if (x > (canvas.width - 80)){
-                y = y + 40;
+            if (x > (canvas.width - 110)){
+                y = y + 55;
                 x = 0;
             }  
-             else if ( y > canvas.height -80 ){
+             else if ( y > canvas.height -110 ){
                  longer(canvas, context); 
              }
             else {
-                x = x + 40;
+                x = x + 55;
             }
         }
 
@@ -85,24 +86,24 @@
             var context = canvas.getContext('2d');
             
             context.beginPath();
-            context.rect(x=x, y=y, 40, 40);
+            context.rect(x=x, y=y, 55, 55);
             context.fillStyle = "white"
             context.fill();
 
             if(y == 0 && x <= 0){
                 y=0
-                x=-40
+                x=-55
             }
             else if (x <= 0){
-                y = y - 40;
-                x = Math.trunc((canvas.width / 40)) * 40 - 40;
+                y = y - 55;
+                x = Math.trunc((canvas.width / 55)) * 55 - 55;
                 console.log(x)
             }  
-             else if ( y > canvas.height -80 ){
+             else if ( y > canvas.height -110 ){
                 longer(canvas, context); 
              }
             else {
-                x = x - 40;
+                x = x - 55;
             }
             
             
@@ -139,14 +140,14 @@
 
 	<center>
       <div class="topnav">
-        <li><a class='active' href="./index.php">Home</a></li>
+        <li><a class='active' href="./index.php">Write a Message</a></li>
+        <li><a href="./test_canvas.php">Create a Character</a></li>
         <li><a href="./aboutus.html">About Us</a></li>
-        <li><a href="./test_canvas.php">Create a character</a></li>
       <div>
 	</center>
 	<br>
     <br>
-	<h2>Welcome to your custom keyboard: </h2>
+	<h2 style='margin-top: 0px;'>Welcome to your custom keyboard: </h2>
 	<body onload="load();">
 
     <canvas id="viewport" style="border:1px solid #000000;"> </canvas>
