@@ -5,11 +5,11 @@ ScriptKey is an image-based keyboard for non-encoded alphabetic scripts. This to
 Changes to ScriptKey's current platform and UI are forthcoming, but it can be used in its current state as follows.
 
 1. In a (macOS) terminal, navigate to the root directory of the repository.
-````
+```
 cd /path/to/unencoded-keyboards
 ```
 2. Change your working directory to `src/html`.
-````
+```
 cd src/html
 ```
 3. Create a directory called `img`.
