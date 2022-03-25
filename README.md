@@ -21,7 +21,7 @@ mkdir img
 cd ../..
 php -S localhost:43560
 ```
-5. Open a browser and navigate to localhost:43560/src/html/
+5. Open a browser and navigate to `localhost:43560/src/html/`
 6. Drawing and adding a character to your keyboard can be done by clicking “Create a Character in the top menu” and clicking send to server. Creating messages using the keyboard can be done on the "Write a Message" page.
 
 
