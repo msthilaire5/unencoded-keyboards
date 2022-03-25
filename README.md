@@ -6,6 +6,7 @@ Changes to ScriptKey's current platform and UI are forthcoming, but it can be us
 
 1. In a (macOS) terminal, clone the repository and navigate to its root directory.
 ```
+git clone https://github.com/msthilaire5/unencoded-keyboards.git
 cd /path/to/unencoded-keyboards
 ```
 2. Change your working directory to `src/html`.
